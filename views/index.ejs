@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html data-theme="cupcake" lang="fr"></html>
 <head>
   <title>Mon App Node sur Azure</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
 <body>
-  <h1>Bienvenue sur mon app Node.js !</h1>
-  <p>Ceci est une page générée avec EJS 🎉</p>
+    <h1 class="text-2xl font-bold mb-4">Choisissez votre formation</h1>
+    <ul class="space-y-4">
+      <% formations.forEach(f => { %>
+        <li class="bg-white p-4 shadow rounded">
+          <h2 class="text-lg font-semibold"><%= f.titre %></h2>
+          <p><%= f.description %></p>
+          <form action="/presence" method="GET">
+            <input type="hidden" name="id" value="<%= f.id %>">
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 mt-2 rounded">Je suis présent</button>
+          </form>
+        </li>
+      <% }) %>
+    </ul>
 </body>
 </html>

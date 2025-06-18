@@ -22,6 +22,8 @@
   },
   "homepage": "https://github.com/bolenge/azure-node-app#readme",
   "dependencies": {
+    "@azure/storage-blob": "^12.27.0",
+    "dotenv": "^16.5.0",
     "ejs": "^3.1.10",
     "express": "^5.1.0"
   },
