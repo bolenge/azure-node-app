@@ -1,0 +1,26 @@
+{
+  "name": "azure-node-app",
+  "version": "1.0.0",
+  "description": "Azure node app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bolenge/azure-node-app.git"
+  },
+  "keywords": [
+    "azure"
+  ],
+  "author": "Don de Dieu Bolenge",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bolenge/azure-node-app/issues"
+  },
+  "homepage": "https://github.com/bolenge/azure-node-app#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
