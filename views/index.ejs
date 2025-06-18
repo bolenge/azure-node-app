@@ -4,20 +4,23 @@
   <title>Mon App Node sur Azure</title>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <h1 class="text-2xl font-bold mb-4">Choisissez votre formation</h1>
-    <ul class="space-y-4">
-      <% formations.forEach(f => { %>
-        <li class="bg-white p-4 shadow rounded">
-          <h2 class="text-lg font-semibold"><%= f.titre %></h2>
-          <p><%= f.description %></p>
-          <form action="/presence" method="GET">
-            <input type="hidden" name="id" value="<%= f.id %>">
-            <button type="submit" class="bg-blue-500 text-white px-4 py-2 mt-2 rounded">Je suis présent</button>
-          </form>
-        </li>
-      <% }) %>
-    </ul>
+  <div class="hero bg-base-200 min-h-screen">
+    <div class="hero-content text-center">
+      <div class="max-w-[550px]">
+        <h1 class="text-4xl font-bold">Raw Academy Présences</h1>
+        <p class="py-6">
+          Cette application permet de signaler la présence à une formation se déroulant à la Raw Academy.
+        </p>
+
+        <a href="/formations" class="btn btn-warning text-[#333]">
+          Marquez votre présence
+          <i class="fa-solid fa-arrow-right-to-bracket"></i>
+        </a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
