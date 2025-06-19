@@ -6,7 +6,14 @@ const dotenv = require('dotenv');
 
 dotenv.config();
 
-const { readJsonBlob } = require('./utils/blobService');
+const mongoose = require('mongoose');
+
+// Connexion MongoDB
+mongoose.connect(process.env.MONGO_URI)
+.then(() => console.log('✅ Connecté à MongoDB'))
+  .catch(err => console.error('❌ Erreur MongoDB :', err));
+
+//const { readJsonBlob } = require('./utils/blobService');
 
 // Définir EJS comme moteur de rendu
 app.set('view engine', 'ejs');
@@ -20,7 +27,10 @@ app.get('/', async (req, res) => {
 
 app.get('/formations', async (req, res) => {
   try {
-    const formations = await readJsonBlob('formations.json');
+    //const formations = await readJsonBlob('formations.json');
+
+    const Formation = require('./models/Formation');
+    const formations = await Formation.find({});
 
     res.render('formations', { formations });
   } catch (err) {
