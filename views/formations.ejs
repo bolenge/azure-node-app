@@ -10,16 +10,16 @@
     <div class="py-10 px-[6rem]">
         <h1 class="text-2xl font-bold mb-6">Choisissez votre formation</h1>
 
-        <div class="grid grid-cols-3 gap-10">
+        <div class="grid lg:grid-cols-3 grid-cols-1 gap-10">
             <% formations.forEach(f => { %>
-                <div class="card bg-base-100 shadow-sm hover:shadow-lg cursor-pointer duration-300 ease-in-out transition">
-                    <figure class="h-[150px] p-4 bg-[#f8f8f8]">
+                <div class="card bg-base-100 min-h-[400px] shadow-sm hover:shadow-lg cursor-pointer duration-300 ease-in-out transition">
+                    <figure class="min-h-[200px] p-4 bg-[#f8f8f8]">
                         <img
                             src="<%= f.image %>"
-                            alt="Shoes" class="w-[70%]" />
+                            alt="Shoes" class="w-[50%]" />
                     </figure>
                     <div class="card-body">
-                    <h2 class="card-title">
+                    <h2 class="text-xl font-bold">
                         <%= f.title %>
                     </h2>
                     <p>
